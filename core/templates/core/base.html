@@ -1,0 +1,31 @@
+<header>
+    {# Load the tag library #} {% load bootstrap3 %} {# Load CSS and JavaScript #} {% bootstrap_css %} {% bootstrap_javascript %} {# Display django.contrib.messages as Bootstrap alerts #} {% bootstrap_messages %}
+</header>
+<!-- Fixed navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand">My Ideas</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'articles' %}">
+                        <span class="glyphicon glyphicon-home"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'new' %}">
+                        <span class="glyphicon glyphicon-plus-sign"></span>
+                    </a>
+                </li>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        {% block content %}{% endblock %}
+    </div>
+</div>
+<!-- /container -->
+<footer></footer>

@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+{% load bootstrap3 %}
+{% block content %}
+    <main class='container'>
+        <h2> New Article </h2>
+
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form layout='inline' %}
+            <div>
+                <button type="submit" class="btn btn-info"> Save </button>
+            </div>
+        </form>
+    </main>
+{% endblock %}
